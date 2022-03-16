@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/布控球接口2.iml" filepath="$PROJECT_DIR$/.idea/布控球接口2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/monitor_ball.iml" filepath="$PROJECT_DIR$/.idea/monitor_ball.iml" />
     </modules>
   </component>
 </project>
