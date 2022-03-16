@@ -30,9 +30,10 @@ def everything():
     response_data = ''
 
 
-
-    task_config_flag = False
     inquire_flag = True
+    task_config_flag = False
+    task_request_flag = False
+
 
     if event_type == 'alg_ability_request':
 
@@ -80,11 +81,36 @@ def everything():
             }
 
             response_data = alg_task_data
+
+    elif event_type == 'alg_task_request':
+        # 算法任务查询
+
+        # 正在查询
+
+        if task_config_flag:
+            # 查询成功
+            print('alg_task_request success')
+            response_data = share_data.globalData.result_data
+        else:
+            # 查询失败
+            print('alg_task_config fail')
+            alg_task_request_data = {
+                "EventType": "alg_ability_request",
+                "Result":
+                    {
+                        "Code": 400,
+                        "Desc": ""
+                    }
+            }
+
+            response_data = alg_task_request_data
+
+    # 最终对请求进行相应
     return response_data
 
 
 
-# 最终对请求进行相应
+
 
 
 

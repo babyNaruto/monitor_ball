@@ -1,11 +1,18 @@
+# 1.获取设备算法能力
 POST http://127.0.0.1:8888/analysis/interface/
 Content-Type: application/json
 
 {"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
 
-###
+###2. 算法任务配置
 POST http://127.0.0.1:8888/analysis/interface/
 Content-Type: application/json
 
 {"EventType": "alg_ability_request"}
+
+###3. 算法任务配置
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_request" }
 
