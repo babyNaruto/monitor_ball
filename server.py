@@ -20,7 +20,7 @@ def everything():
 
     print('request.data:', request.data)
 
-    # 把获取到的数据转为JSON格式
+    # 把获取到的数据转为JSON对象
     share_data.globalData.request_data = json.loads(request.data.decode('utf-8'))
     print(share_data.globalData.request_data)
 
