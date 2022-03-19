@@ -4,7 +4,7 @@ import json
 
 # from settings import APP_PORT
 import share_data
-from share_data import globalData
+
 
 # 创建一个服务
 app = Flask(__name__)
@@ -31,5 +31,5 @@ def everything():
 if __name__ == '__main__':
     # 启动服务 指定主机和端口
     # server = pywsgi.WSGIServer(('127.0.0.1', 8889), app)
-    app.run(host='127.0.0.1', port=8866, debug=False)
+    app.run(host='127.0.0.1', port=8806, debug=False)
 

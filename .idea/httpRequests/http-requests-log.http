@@ -1,0 +1,231 @@
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_task_request"
+}
+
+<> 2022-03-19T150144.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-19T145928.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-19T145633.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-19T145617.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_request" }
+
+<> 2022-03-16T190226.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-16T175630.200.json
+
+###
+
+POST http:///127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+###
+
+POST http:///127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T171659.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T171636.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T165648.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T165610.500.html
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T165504.500.html
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T165422.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T164948.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T164324.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_ability_request"}
+
+<> 2022-03-16T163234.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-16T162937.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-16T162559.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-16T162437.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-16T162008.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+
+<> 2022-03-16T155212.200.json
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+
+<> 2022-03-16T155159.404.html
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+
+<> 2022-03-16T155125.404.html
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+
+<> 2022-03-16T154123.404.html
+
+###
+
+POST http://127.0.0.1:8888
+
+<> 2022-03-16T154106.405.html
+
+###
+
+POST http://127.0.0.1:8888/analysis/interface/
+
+<> 2022-03-16T153943.404.html
+
+###
+
