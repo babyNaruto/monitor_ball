@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import json
 # from settings import APP_PORT
-from share_data import GlobalResult, GlobalRequest
+import shareData
 
 # 创建一个服务
 app = Flask(__name__)
@@ -32,7 +32,7 @@ def everything():
     task_config_flag = False
 
     # --算法任务查询状态--默认false
-    task_request_flag = False
+    task_request_flag = True
 
     # 2.1 设备算法能力查询
     if event_type == 'alg_ability_request':
@@ -92,9 +92,10 @@ def everything():
 
         # 查询结果 -> GlobalResult.task_request_res
 
-        if task_config_flag:
+        if task_request_flag:
             # 查询成功
             print('alg_task_request success')
+            GlobalResult.task_request_res = 111
             response_data = GlobalResult.task_request_res
         else:
             # 查询失败
@@ -114,6 +115,9 @@ def everything():
     return response_data
 
 
+
+
+
 if __name__ == '__main__':
     # 启动服务 指定主机和端口
-    app.run(host='127.0.0.1', port=8888, debug=False)
+    app.run(host='127.0.0.1', port=3002, debug=False)

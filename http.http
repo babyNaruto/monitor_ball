@@ -18,10 +18,12 @@ Content-Type: application/json
 
 
 ###3. 算法任务配置
-POST http://127.0.0.1:8888/analysis/interface/
+POST http://127.0.0.1:3002/analysis/interface/
 Content-Type: application/json
 
 {
   "EventType": "alg_task_request"
 }
+
+
 
