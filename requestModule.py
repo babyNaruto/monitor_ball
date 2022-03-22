@@ -1,7 +1,6 @@
 import requests
 import os
 import json
-import shareData
 import server
 
 device_id = {"Ipc_code": 0}
@@ -51,7 +50,7 @@ def push_img(alarm_img_name, alarm_img_url):
 
 # 告警信息推送
 
-def alarm_push_info(**alarm_info):
+def alarm_push_info(alarm_info):
     # 地址1
     url_1 = "http://127.0.0.1:8807/analysis/alarm_push/"
     # 地址2
@@ -65,20 +64,11 @@ def alarm_push_info(**alarm_info):
         "AlarmInfo":
             {
                 "Number": 1,
-                "Item": [
-                    {
-
-                    }
-                ]
+                "Item": alarm_info
             }
     }
 
-    data_item = data_1['AlarmInfo']['Item'][0]
-    for key, value in alarm_info.items():
-        data_item[key] = value
-
     # 平台1推送
-
     r_1 = requests.post(url_1, data=json.dumps(data_1), headers=headers)
     if r_1.status_code == 200:
         print('r_1 success', r_1.status_code)
@@ -101,11 +91,20 @@ def alarm_push_info(**alarm_info):
 
 
 if __name__ == '__main__':
-    test_test = {
-        "name1": 'name1',
-        'name2': 'name2'
-    }
+    test_test = [
+        {
+            "AlgCode": 1001,
+            "TaskId": "AlgTask123",
+            "AlarmTime": "2020-01-01 12:00:00",
+            "Desc": "xxxxxxxxx",
+            "PictureName": "xxx.jpg",
+            "Type": 0,
+            "Width": 1080,
+            "Height": 720,
+            "Size": 180309
+        }
+    ]
     # 传入alg_task_alarm_push Item[]里面的字典数据
     # get_dev_id()
-    alarm_push_info(**test_test)
+    alarm_push_info(test_test)
     # push_img('img0.jpg','./img0.jpg')

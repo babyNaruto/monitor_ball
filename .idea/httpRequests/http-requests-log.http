@@ -1,3 +1,155 @@
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask222", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-22T152522.200.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask222", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-22T152245.500.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_task_request"
+}
+
+<> 2022-03-22T151045.200.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_task_request"
+}
+
+<> 2022-03-22T150949.500.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-22T150133.200.json
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-22T150121.200.json
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-22T150052.200.json
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-22T150031.500.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-22T144432.200.json
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-22T144241.500.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-22T144036.200.json
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-22T143602.200.json
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-22T141906.500.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-22T141535.500.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_ability_request"
+}
+
+<> 2022-03-22T112145.500.html
+
+###
+
 POST http://127.0.0.1:3002/2500/ipc/get/
 Content-Type: application/json
 
@@ -378,139 +530,6 @@ Content-Type: application/json
 }
 
 <> 2022-03-21T154358.500.html
-
-###
-
-POST http://127.0.0.1:8888/2500/ipc/get
-Content-Type: application/json
-
-{
-  "Ipc_code": 888
-}
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{
-  "EventType": "alg_task_request"
-}
-
-<> 2022-03-19T150144.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-19T145928.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-19T145633.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
-
-<> 2022-03-19T145617.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_task_request" }
-
-<> 2022-03-16T190226.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
-
-<> 2022-03-16T175630.200.json
-
-###
-
-POST http:///127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
-
-###
-
-POST http:///127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_task_config", "TaskId": "AlgTask123", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-16T171659.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-16T171636.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-16T165648.200.json
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-16T165610.500.html
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-16T165504.500.html
-
-###
-
-POST http://127.0.0.1:8888/analysis/interface/
-Content-Type: application/json
-
-{"EventType": "alg_ability_request"}
-
-<> 2022-03-16T165422.200.json
 
 ###
 

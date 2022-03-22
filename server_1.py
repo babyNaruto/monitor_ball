@@ -3,7 +3,7 @@ import json
 # from gevent import pywsgi
 
 # from settings import APP_PORT
-import shareData
+
 
 # 创建一个服务
 app = Flask(__name__)
