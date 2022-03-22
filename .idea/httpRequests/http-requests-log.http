@@ -1,6 +1,37 @@
 POST http://127.0.0.1:3002/analysis/interface/
 Content-Type: application/json
 
+{
+  "EventType": "alg_task_request"
+}
+
+<> 2022-03-22T192941.200.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{
+  "EventType": "alg_task_request"
+}
+
+<> 2022-03-22T192936.200.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
+{"EventType": "alg_task_config", "TaskId": "AlgTask222", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
+
+<> 2022-03-22T192929.200.html
+
+###
+
+POST http://127.0.0.1:3002/analysis/interface/
+Content-Type: application/json
+
 {"EventType": "alg_task_config", "TaskId": "AlgTask222", "DevCode": "123456789012345678", "Command": 1, "AlgCode": 1001, "AlarmInterval": 5, "AlarmPushUrl": "http://192.168.1.200:3400/analysis/alarm_push" }
 
 <> 2022-03-22T152522.200.html
@@ -497,39 +528,6 @@ Content-Type: application/json
 }
 
 <> 2022-03-21T154707.500.html
-
-###
-
-POST http://127.0.0.1:3001/2500/ipc/get
-Content-Type: application/json
-
-{
-  "Ipc_code": 888
-}
-
-<> 2022-03-21T154603.500.html
-
-###
-
-POST http://127.0.0.1:3001/2500/ipc/get
-Content-Type: application/json
-
-{
-  "Ipc_code": 888
-}
-
-<> 2022-03-21T154547.500.html
-
-###
-
-POST http://127.0.0.1:3001/2500/ipc/get
-Content-Type: application/json
-
-{
-  "Ipc_code": 888
-}
-
-<> 2022-03-21T154358.500.html
 
 ###
 

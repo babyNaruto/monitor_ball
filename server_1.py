@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import json
-# from gevent import pywsgi
+from gevent import pywsgi
 
 # from settings import APP_PORT
 
@@ -44,5 +44,10 @@ def everything_get_id():
 if __name__ == '__main__':
     # 启动服务 指定主机和端口
     # server = pywsgi.WSGIServer(('127.0.0.1', 8889), app)
-    app.run(host='127.0.0.1', port=8807, debug=False)
     # app.run(host='127.0.0.1', port=8807, debug=False)
+    # app.run(host='127.0.0.1', port=8807, debug=False)
+
+    server = pywsgi.WSGIServer(('127.0.0.1', 8807), app)
+    print('server is running...')
+    server.serve_forever()
+

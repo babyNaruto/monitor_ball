@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import json
+from gevent import pywsgi
 # from settings import APP_PORT
 from AIData import ability_res,task_config_res,config_fail_res,task_request_res
 
@@ -137,4 +138,6 @@ def everything():
 
 if __name__ == '__main__':
     # 启动服务 指定主机和端口
-    app.run(host='127.0.0.1', port=3002, debug=False)
+    server = pywsgi.WSGIServer(('127.0.0.1', 3002), app)
+    print('server is running...')
+    server.serve_forever()
