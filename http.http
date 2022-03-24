@@ -26,5 +26,16 @@ Content-Type: application/json
   "EventType": "alg_task_request"
 }
 
+###8. 调式
+POST https://surveillance-api.whhyxkj.com/camera/api/violation-manage/upload/violation/
+Content-Type: application/json
+
+
+{
+  "EventType": "alg_task_request"
+}
+
+
+
 
 

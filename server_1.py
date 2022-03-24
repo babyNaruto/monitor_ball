@@ -38,7 +38,7 @@ def everything_get_id():
     request_data = json.loads(request.data.decode('utf-8'))
     print(request_data, '已拿到')
 
-    return {"Ipc_code": 888}
+    return {"DeviceSno": "device-1111111"}
 
 
 if __name__ == '__main__':
