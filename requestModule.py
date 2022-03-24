@@ -18,19 +18,17 @@ def get_dev_id():
         DeviceSno = r.text
     else:
         print('设备ID获取失败！')
-        DeviceSno = ''
+        DeviceSno = '{"DeviceSno": ''}'
 
     print(DeviceSno)
     return DeviceSno
 
 
 # 告警图片推送
-def push_img(alarm_img_name, alarm_img_url):
-    # 地址1:需要拿到设备Id的平台
-    url_1 = "https://surveillance-api.whhyxkj.com/camera/api/violation-manage/upload/file"
-
-    # 地址2
-    url_2 = "http://127.0.0.1:8807/analysis/alarm_push/"
+# 1.云平台推送图片
+def push_img_cloud(url, alarm_img_name, alarm_img_url):
+    # 地址1:云平台地址
+    # url_1 = "https://surveillance-api.whhyxkj.com/camera/api/violation-manage/upload/file"
 
     files = [
         ('image', (alarm_img_name, open(alarm_img_url, 'rb'), 'image/jpeg'))
@@ -39,37 +37,45 @@ def push_img(alarm_img_name, alarm_img_url):
         "token": 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeXN0ZW0iLCJuYW1lIjoi6L-d56ug5LiK5LygIiwidHlwZSI6IjEiLCJ1c2VySWQiOiJzeXN0ZW0iLCJpYXQiOjE2NDgwMTg4NzJ9.HilTvzEUBul2JGJq2NlbxA2OUCgglauhYHFGv6KcPnHSnCPYJK5xgSNnLoFi67W5TkBOBDgf3X_r2h0fS-eihw'
     }
     # 平台1图片推送
-    response_1 = requests.request("POST", url_1, headers=headers, files=files)
-    if response_1.status_code == 200:
-        print('平台1图片推送成功', response_1.status_code)
-        print(response_1.text)
+    r_1 = requests.request("POST", url, headers=headers, files=files)
+    if r_1.status_code == 200:
+        print('云平台图片推送成功', r_1.status_code)
+        print(r_1.text)
     else:
-        print('平台1图片推送失败', response_1.status_code)
-        print(response_1.text)
-    # 平台2图片推送
-    response_2 = requests.request("POST", url_2, headers=headers, files=files)
-    if response_2.status_code == 200:
-        print('平台2图片推送成功', response_2.status_code)
-        print(response_2.text)
+        print('云平台图片推送失败', r_1.status_code)
+        print(r_1.text)
+
+
+# 2.加密芯片推送图片
+def push_img_chip(url, alarm_img_name, alarm_img_url):
+    files = [
+        ('image', (alarm_img_name, open(alarm_img_url, 'rb'), 'image/jpeg'))
+    ]
+    headers = {
+        "token": 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeXN0ZW0iLCJuYW1lIjoi6L-d56ug5LiK5LygIiwidHlwZSI6IjEiLCJ1c2VySWQiOiJzeXN0ZW0iLCJpYXQiOjE2NDgwMTg4NzJ9.HilTvzEUBul2JGJq2NlbxA2OUCgglauhYHFGv6KcPnHSnCPYJK5xgSNnLoFi67W5TkBOBDgf3X_r2h0fS-eihw'
+    }
+    r_2 = requests.request("POST", url, headers=headers, files=files)
+    if r_2.status_code == 200:
+        print('加密芯片图片推送成功', r_2.status_code)
+        print(r_2.text)
     else:
-        print('平台2图片推送失败', response_2.status_code)
-        print(response_2.text)
+        print('加密芯片图片推送失败', r_2.status_code)
+        print(r_2.text)
 
 
 # 告警信息推送
 
-def alarm_push_info(alarm_info):
-    # 地址1：需要拿到设备ID的平台
-    url_1 = "https://surveillance-api.whhyxkj.com/camera/api/violation-manage/upload/violation"
-    # 地址2
-    url_2 = "http://127.0.0.1:8807/analysis/alarm_push/"
+# 3.云平台推送告警信息
+def push_info_cloud(url, alarm_info):
+    # 地址1：云平台
+    # url_1 = "https://surveillance-api.whhyxkj.com/camera/api/violation-manage/upload/violation"
 
     # 头部信息
     headers = {
         "Content-Type": 'application/json',
         "token": 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeXN0ZW0iLCJuYW1lIjoi6L-d56ug5LiK5LygIiwidHlwZSI6IjEiLCJ1c2VySWQiOiJzeXN0ZW0iLCJpYXQiOjE2NDgwMTg4NzJ9.HilTvzEUBul2JGJq2NlbxA2OUCgglauhYHFGv6KcPnHSnCPYJK5xgSNnLoFi67W5TkBOBDgf3X_r2h0fS-eihw'
     }
-    data_1 = {
+    data_2 = {
         "EventType":
             "alg_task_alarm_push",
         "AlarmInfo":
@@ -79,27 +85,43 @@ def alarm_push_info(alarm_info):
             }
     }
 
-    # 平台2推送
-    r_2 = requests.request("POST", url_2, data=json.dumps(data_1), headers=headers)
-    if r_2.status_code == 200:
-        print('平台2信息推送成功', r_2.status_code)
-        print(r_2.text)
-    else:
-        print('平台2信息推送失败', r_2.status_code)
-        print(r_2.text)
-
-    # 平台1推送,多加推送数据设备
+    # 云平台推送,加推送设备ID
     # 得到设备ID
     device_id = json.loads(get_dev_id())['DeviceSno']
-    data_2 = data_1
     data_2['AlarmInfo']['Item'][0]['DeviceSno'] = device_id
-    r_1 = requests.post(url_1, data=json.dumps(data_2), headers=headers)
+    r_1 = requests.post(url, data=json.dumps(data_2), headers=headers)
 
     if r_1.status_code == 200:
-        print('平台1信息推送成功', r_1.status_code)
+        print('云平台告警信息推送成功', r_1.status_code)
         print(r_1.text)
     else:
-        print('平台1信息推送失败', r_1.status_code)
+        print('云平台告警信息推送失败', r_1.status_code)
+
+
+# 4.加密芯片推送告警信息
+def push_info_chip(url, alarm_info):
+    # 头部信息
+    headers = {
+        "Content-Type": 'application/json',
+        "token": 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeXN0ZW0iLCJuYW1lIjoi6L-d56ug5LiK5LygIiwidHlwZSI6IjEiLCJ1c2VySWQiOiJzeXN0ZW0iLCJpYXQiOjE2NDgwMTg4NzJ9.HilTvzEUBul2JGJq2NlbxA2OUCgglauhYHFGv6KcPnHSnCPYJK5xgSNnLoFi67W5TkBOBDgf3X_r2h0fS-eihw'
+    }
+    data = {
+        "EventType":
+            "alg_task_alarm_push",
+        "AlarmInfo":
+            {
+                "Number": 1,
+                "Item": alarm_info
+            }
+    }
+    # 信息推送
+    r_2 = requests.request("POST", url, data=json.dumps(data), headers=headers)
+    if r_2.status_code == 200:
+        print('加密芯片告警信息推送成功', r_2.status_code)
+        print(r_2.text)
+    else:
+        print('加密芯片告警信息推送失败', r_2.status_code)
+        print(r_2.text)
 
 
 if __name__ == '__main__':
@@ -116,5 +138,13 @@ if __name__ == '__main__':
             "Size": 180309,
         }
     ]
-    alarm_push_info(test_test)
-    push_img('281230.jpg', './281230.jpg')
+    # 测试 加密平台
+    push_info_chip('http://127.0.0.1:8807/analysis/alarm_push/', test_test)
+    push_img_chip('http://127.0.0.1:8807/analysis/alarm_push/', '281230.jpg',
+                  './281230.jpg')
+    #
+    # # 测试 云平台
+    # push_info_cloud('https://surveillance-api.whhyxkj.com/camera/api/violation-manage/upload/violation', test_test)
+    # push_img_cloud('https://surveillance-api.whhyxkj.com/camera/api/violation-manage/upload/file', '281230.jpg',
+    #                './281230.jpg')
+

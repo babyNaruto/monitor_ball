@@ -38,14 +38,12 @@ def everything_get_id():
     request_data = json.loads(request.data.decode('utf-8'))
     print(request_data, '已拿到')
 
-    return {"DeviceSno": "device-1111111"}
+    return {"DeviceSno": "device-20220309-1"}
 
 
 if __name__ == '__main__':
     # 启动服务 指定主机和端口
-    # server = pywsgi.WSGIServer(('127.0.0.1', 8889), app)
-    # app.run(host='127.0.0.1', port=8807, debug=False)
-    # app.run(host='127.0.0.1', port=8807, debug=False)
+
 
     server = pywsgi.WSGIServer(('127.0.0.1', 8807), app)
     print('server is running...')
